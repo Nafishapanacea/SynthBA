@@ -4,7 +4,6 @@ import nibabel as nib
 from src.configuration.config import *
 import subprocess
 
-ants_bin = "/home/jupyter-nafisha/Brain_age/ants_2_6_3/ants-2.6.3/bin"
 env = os.environ.copy()
 env["PATH"] = ants_bin + ":" + env["PATH"]
 
@@ -32,7 +31,7 @@ def preprocess(input_path, model_path, strip_dir, reg_dir, template_path):
     strip_out = os.path.join(strip_dir, fname)
 
     cmd = [
-        "/home/jupyter-nafisha/.local/bin/nipreps-synthstrip",
+        "nipreps-synthstrip",
         "-i", input_path,
         "-o", strip_out,
         "--model", model_path

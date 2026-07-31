@@ -17,6 +17,9 @@ import shutil
 
 router = APIRouter()
 
+os.makedirs(InputFolderPath, exist_ok=True)
+os.makedirs(preprocess_output_path, exist_ok=True)
+
 @router.post("/predict/")
 async def create_prediction(file: UploadFile):
     """Predict segmentation from the uploaded NIFTI file."""
